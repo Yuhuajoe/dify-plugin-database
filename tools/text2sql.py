@@ -7,6 +7,9 @@ from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 from dify_plugin.entities.model.message import SystemPromptMessage, UserPromptMessage
 
+import oracledb
+oracledb.init_oracle_client(lib_dir=r"/root/instantclient_21_9")
+
 SYSTEM_PROMPT_TEMPLATE = """
 You are a {dialect} expert. Your task is to generate an executable {dialect} query based on the user's question.
 

@@ -7,6 +7,8 @@ from sqlalchemy import create_engine
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
+import oracledb
+oracledb.init_oracle_client(lib_dir=r"/root/instantclient_21_9")
 
 class CSVQueryTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
